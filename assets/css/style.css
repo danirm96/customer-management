@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+    font-family: 'Raleway', sans-serif;
+}
+
+.login{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.formLogin{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: calc(35% - 150px);
+    top: calc(50% - 150px);
+    background: #ffffff;
+    padding: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.formLogin input{
+    display: block;
+    border: 0;
+    margin: 15px 0px;
+    padding: 8px;
+    border-bottom: 1px solid tomato;
+    color: #414141;
+    width: 100%;
+}
+.formLogin input::placeholder{
+    color: tomato;
+}
+.formLogin button{
+    width: 100%;
+    background: tomato;
+    padding: 8px;
+    border: 0;
+    margin: 15px 0px;
+    color: #fff;
+}
+.formLogin h1{
+    text-align: center;
+    color: tomato;
+    font-size: 30px;
+    margin: 10px;
+}
+.formRegister{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: calc(35% - 150px);
+    top: calc(50% - 150px);
+    background: #ffffff;
+    padding: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.formRegister input{
+    display: block;
+    border: 0;
+    margin: 15px 0px;
+    padding: 8px;
+    border-bottom: 1px solid tomato;
+    color: #414141;
+    width: 100%;
+}
+.formRegister input::placeholder{
+    color: tomato;
+}
+.formRegister button{
+    width: 100%;
+    background: tomato;
+    padding: 8px;
+    border: 0;
+    margin: 15px 0px;
+    color: #fff;
+}
+.formRegister h1{
+    text-align: center;
+    color: tomato;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.topBar{
+    background: tomato;
+    color: #414141;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+.right{
+    text-align: right;
+}
+
+.rightMenu a{
+    color: #414141;
+    padding: 8px;
+    display: block;
+    background: #fff;
+    width: fit-content;
+    float: right;
+    cursor: pointer;
+}
+#leftMenu{
+    height: calc(100vh - 38px);
+    background: #3b3b3b;
+    width: 10%;
+    top: 38px;
+    position: fixed;
+    float: left;
+}
+#leftMenu ul{
+    margin: 0;
+    padding-top: 30px;
+}
+#leftMenu ul li{
+    padding: 8px 35px;
+    transition: 0.4s;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+#leftMenu ul li:hover{
+    padding-left: 45px;
+    color: tomato;
+    background: #fff;
+}
+.row{
+    margin-bottom: 0px !important;
+}
+.row .col{
+    padding: 0px !important;
+}
+
+#main{
+    padding: 40px 20px !important;
+    width: 90%;
+    float: left;
+    margin-top: 38px;
+    margin-left: 10%;
+}
+
+.module{
+    width: 100%;
+    background: #ffffff;
+    padding: 20px 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.10);
+}
+
+.waves-effect.waves-tomato .waves-ripple, .tomato {
+    background-color: tomato;
+}
+.waves-tomato{
+    margin: 15px 0px;
+}
+
+#close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    color: tomato;
+}
+.customerIcon{
+    font-size: 20px !important;
+    cursor: pointer;
+}
+.module th{
+    border-bottom: 1px solid #414141;
+}
+.module td{
+    border-bottom: 1px solid #eee;
+}
+
+#modal1 .row{
+    margin: 0 !important;
+    margin-top: 15px !important;
+}
+
+#modal1 .input-field,
+#modal1 label{
+    padding: 0px 8px !important;
+    margin: 0 !important;
+
+}
+.myProfile .col{
+    padding: 10px !important;
+}
+select{
+    display: block !important;
+}
+.module h4{
+    display: inline-block;
+    width: fit-content;
+    padding-right: 10px;
+    margin: 0;
+    vertical-align: middle;
+}
