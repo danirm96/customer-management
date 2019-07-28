@@ -10,7 +10,7 @@ require_once $_SERVER["DOCUMENT_ROOT"]. '/core/config.php';
 //var_dump($_GET);
 
 $invoices = new invoices();
-$dataInv = $invoices->getInvoice($_GET["invoice"])[0];
+$dataInv = $invoices->getInvoice($_GET["invoice"],$_SESSION["id"])[0];
 //guay($dataInv);
 
 use Spipu\Html2Pdf\Html2Pdf;
@@ -49,18 +49,18 @@ ob_start();
         <table style="margin-top: 15mm">
             <tr>
                 <td style="width: 50%; text-align: left">
-                    <p class="col s12"><b>Daniel Rodríguez Montes</b></p>
-                    <p class="col s12">C/ Amador de los Ríos 23-25 2ºD</p>
-                    <p class="col s12">41008 - Sevilla</p>
-                    <p class="col s12">España</p>
-                    <p class="col s12">28983065 Y</p>
+                    <p class="col s12"><b><?php echo $dataInv["user"]["fullName"];?></b></p>
+                    <p class="col s12"><?php echo $dataInv["user"]["address"];?></p>
+                    <p class="col s12"><?php echo $dataInv["user"]["cp"];?> - <?php echo $dataInv["user"]["city"];?></p>
+                    <p class="col s12"><?php echo $dataInv["user"]["country"];?></p>
+                    <p class="col s12"><?php echo $dataInv["user"]["nif"];?></p>
                 </td>
                 <td style="width: 50%;padding-left: 20px; text-align: left">
-                    <p class="col s12"><b> <?php echo $dataInv["customer"];?></b></p>
-                    <p class="col s12"> <?php echo $dataInv["address"];?></p>
-                    <p class="col s12"> <?php echo $dataInv["cp"];?> -  <?php echo $dataInv["city"];?></p>
-                    <p class="col s12"> <?php echo $dataInv["country"];?></p>
-                    <p class="col s12"> <?php echo $dataInv["nif"];?></p>
+                    <p class="col s12"><b> <?php echo $dataInv["customer"]["customer"];?></b></p>
+                    <p class="col s12"> <?php echo $dataInv["customer"]["address"];?></p>
+                    <p class="col s12"> <?php echo $dataInv["customer"]["cp"];?> -  <?php echo $dataInv["customer"]["city"];?></p>
+                    <p class="col s12"> <?php echo $dataInv["customer"]["country"];?></p>
+                    <p class="col s12"> <?php echo $dataInv["customer"]["nif"];?></p>
                 </td>
             </tr>
         </table>

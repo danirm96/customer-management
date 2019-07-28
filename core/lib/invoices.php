@@ -163,10 +163,11 @@ class invoices extends db_connect {
     }
 
 
-    public function getInvoice($id){
+    public function getInvoice($id,$userId){
         $sql = $this->db->prepare("SELECT * FROM invoices WHERE id = " .$id);
         $sql->execute();
         $inv = $sql->fetchAll(2);
+
 
         $invoices = array();
 
@@ -179,17 +180,31 @@ class invoices extends db_connect {
             $sql = $this->db->prepare("SELECT * FROM rel_invoices WHERE idInvoice = " . $id);
             $sql->execute();
             $details = $sql->fetchAll(2);
+            $sql = $this->db->prepare("SELECT * FROM users WHERE id = ". $userId);
+            $sql->execute();
+            $user = $sql->fetchAll(2)[0];
+
 
             $invoices[] = array(
                 "id" => $item["id"],
                 "number" => $item["number"],
                 "date" => $item["date"],
-                "nif" => $customer["nif"],
-                "customer" => $customer["fullName"],
-                "address" => $customer["address"],
-                "cp" => $customer["cp"],
-                "city" => $customer["city"],
-                "country" => $customer["country"],
+                "user" => array(
+                    "fullName" => $user["fullName"],
+                    "address" => $user["address"],
+                    "city" => $user["city"],
+                    "country" => $user["country"],
+                    "cp" => $user["cp"],
+                    "nif" => $user["nif"],
+                ),
+                "customer" => array(
+                    "customer" => $customer["fullName"],
+                    "nif" => $customer["nif"],
+                    "address" => $customer["address"],
+                    "cp" => $customer["cp"],
+                    "city" => $customer["city"],
+                    "country" => $customer["country"],
+                ),
                 "total" => $total["totalFra"],
                 "rate" => $total["rate"],
                 "comment" => $item["comment"],
